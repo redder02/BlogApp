@@ -4,7 +4,7 @@ from flask_jwt_extended import create_access_token
 from models.user import User
 from models import db
 from datetime import datetime, timedelta
-
+from utils.decorators import jwt_token_required
 from . import auth_routes
 
 @auth_routes.route('/signup', methods=['GET', 'POST'])
@@ -33,6 +33,7 @@ def login():
     return render_template('login.html')
 
 @auth_routes.route('/logout')
+@jwt_token_required
 def logout():
     # Set the cookie expiration to a past date to invalidate it
     response = redirect(url_for('auth.login'))

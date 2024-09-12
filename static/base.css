@@ -1,13 +1,88 @@
+/* Base styles */
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+    padding: 40px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container styling */
+.container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Headings */
+h1 {
+    font-size: 24px;
+    color: #007BFF;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Paragraphs and links */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
 a {
     color: #007BFF;
+    font-weight: bold;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
+    color: #0056b3;
     text-decoration: underline;
+}
+
+/* Button-like link styling */
+.button-link {
+    display: inline-block;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.button-link:hover {
+    background-color: #0056b3;
+    color: #fff; /* Ensure the text remains white on hover */
+}
+
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    body {
+        padding: 20px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 14px;
+    }
 }

@@ -1,38 +1,99 @@
+/* General body styling */
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-h2 {
-    color: #333;
-}
-
-form {
+/* Container styling for the form and heading */
+.edit-post-container {
+    text-align: center;
     margin-top: 20px;
 }
 
-label {
-    display: block;
+/* Form container styling */
+form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-top: -20px;  /* This will make the form move slightly up to be closer to the heading */
+}
+
+/* Heading styling */
+h2 {
+    color: #333;
+    font-size: 26px;
     margin-bottom: 10px;
 }
 
+/* Label styling */
+label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+    text-align: left;
+}
+
+/* Input and textarea field styling */
 input, textarea {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
 }
 
+/* Input and textarea field focus effect */
+input:focus, textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Textarea styling */
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* Button styling */
 button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+/* Button hover effect */
 button:hover {
-    background-color: #45a049;
+    background-color: #0056b3;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 480px) {
+    form {
+        width: 100%;
+        padding: 20px;
+    }
+
+    button {
+        font-size: 14px;
+    }
 }
