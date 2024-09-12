@@ -3,36 +3,72 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
     margin: 0;
-    padding: 40px;
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Main heading */
+/* Header styling */
+header {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Heading styling */
 h2 {
     color: #333;
     font-size: 28px;
-    margin-bottom: 20px;
+    margin: 0;
 }
 
-/* Button styling */
-button {
+/* Logout button styling */
+.logout-button {
     padding: 10px 20px;
-    background-color: #007BFF;
+    background-color: #dc3545;
     color: white;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    margin-right: 10px;
     font-size: 16px;
     transition: background-color 0.3s ease;
     box-shadow: 0px 4px 6px rgba(0, 123, 255, 0.4);
 }
 
-/* Hover effect for buttons */
-button:hover {
-    background-color: #0056b3;
+.logout-button:hover {
+    background-color: #c82333;
+}
+
+/* Main content styling */
+.main-content {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* New Post button styling */
+.new-post-button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 123, 255, 0.4);
+    margin-bottom: 20px;
+}
+
+.new-post-button:hover {
+    background-color: #218838;
 }
 
 /* Styling for the unordered list */
