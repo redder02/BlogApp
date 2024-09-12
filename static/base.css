@@ -1,7 +1,7 @@
 /* Base styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f7f9fc;
+    background: linear-gradient(135deg, #e3f2fd, #f5f5f5); /* Subtle gradient background */
     color: #333;
     padding: 40px;
     margin: 0;
@@ -9,43 +9,71 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 /* Container styling */
 .container {
     background-color: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
     width: 100%;
     text-align: center;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add subtle hover effect for the container */
+.container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* Headings */
 h1 {
-    font-size: 24px;
+    font-size: 28px;
     color: #007BFF;
     margin-bottom: 20px;
     font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Decorative heading underline */
+h1::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #007BFF;
+    margin: 10px auto 0;
+    border-radius: 2px;
 }
 
 /* Paragraphs and links */
 p {
     font-size: 16px;
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    color: #555;
 }
 
+/* Enhanced link styling */
 a {
     color: #007BFF;
     font-weight: bold;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 a:hover {
     color: #0056b3;
+    text-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
     text-decoration: underline;
 }
 
@@ -54,19 +82,49 @@ a:hover {
     display: inline-block;
     background-color: #007BFF;
     color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 25px;
+    border-radius: 50px;
     text-decoration: none;
     font-size: 16px;
-    transition: background-color 0.3s ease;
-    margin-bottom: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
 }
 
 .button-link:hover {
     background-color: #0056b3;
-    color: #fff; /* Ensure the text remains white on hover */
+    color: #fff;
+    transform: translateY(-2px);
 }
 
+/* Floating icons or shapes to enhance visual appeal */
+.background-icons {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    right: -50px;
+    bottom: -50px;
+    z-index: 1;
+    background-image: url('path-to-decorative-shapes.svg'); /* Add decorative floating shapes */
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+/* Small floating icons in top corner for decoration */
+.background-icons::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background-image: url('path-to-small-icon.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.8;
+}
 
 /* Responsive Design */
 @media (max-width: 480px) {
@@ -75,14 +133,18 @@ a:hover {
     }
 
     .container {
-        padding: 20px;
+        padding: 30px;
     }
 
     h1 {
-        font-size: 22px;
+        font-size: 24px;
     }
 
     p {
         font-size: 14px;
+    }
+
+    .button-link {
+        padding: 10px 20px;
     }
 }
