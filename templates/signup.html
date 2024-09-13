@@ -11,6 +11,10 @@
 <body>
     <div class="container">
         <h2>Sign Up</h2>
+        <!-- Display the error message if it exists -->
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
         <form action="/signup" method="POST">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>

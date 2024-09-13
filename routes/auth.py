@@ -12,11 +12,21 @@ def signup():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
+        user = User.query.filter_by(username=username).first()
+
+        # If user already exists, re-render the signup page with an error message
+        if user:
+            return render_template('signup.html', error="User already exists"), 401
+        
+        # Hash the password and create a new user
         hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
         new_user = User(username=username, password=hashed_password)
         db.session.add(new_user)
         db.session.commit()
+
+        # Redirect to login page after successful signup
         return redirect(url_for('auth.login'))
+
     return render_template('signup.html')
 
 @auth_routes.route('/login', methods=['GET', 'POST'])

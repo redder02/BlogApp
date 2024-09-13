@@ -1,4 +1,4 @@
-from flask import request, jsonify, session
+from flask import request, jsonify, session, render_template
 from flask_jwt_extended import decode_token
 from functools import wraps
 

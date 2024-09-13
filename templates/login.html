@@ -9,6 +9,11 @@
 <body>
     <div class="login-container">
         <h2>Login</h2>
+        <!-- Display the error message if it exists -->
+        <!-- {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %} -->
+        <p style="color: red;" id="error"></p>
         <form id="login-form">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
@@ -37,7 +42,8 @@
                 document.cookie = "auth=" + result.access_token + "; path=/";
                 window.location.href = '/posts';
             } else {
-                alert(result.message);
+                // alert(result.message);
+                document.getElementById('error').innerHTML = "Invalid credentials";
             }
         });
     </script>
