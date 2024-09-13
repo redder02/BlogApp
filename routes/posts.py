@@ -51,3 +51,9 @@ def delete_post(post_id):
     db.session.delete(post)
     db.session.commit()
     return redirect(url_for('post.posts'))
+
+# @post_routes.route('/post/<int:post_id>/like', methods=['POST'])
+# @jwt_token_required
+# def like_post(post_id):
+#     post = Post.query.get_or_404(post_id)
+    
